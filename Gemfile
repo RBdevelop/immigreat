@@ -65,3 +65,5 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'simple_form'
+gem 'angularjs-rails'
+
