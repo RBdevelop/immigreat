@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
- ruby '2.0.0'
+ ruby '2.2.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -67,4 +67,10 @@ gem 'neat'
 gem 'bitters'
 gem 'simple_form'
 gem 'angularjs-rails'
+
+source 'https://rails-assets.org' do
+  
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-ui-router'
+end
 
