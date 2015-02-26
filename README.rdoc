@@ -1,5 +1,5 @@
-<h1> An Inforgraphic and tweet addition to http://austin.fwd.us/ 
-</h1>
+ An Inforgraphic and tweet addition to http://austin.fwd.us/ 
+
 
 Builts on rails currently employing :
 Angular JS
