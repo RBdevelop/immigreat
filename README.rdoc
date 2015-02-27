@@ -1,4 +1,6 @@
-An Inforgraphic and tweet addition to http://austin.fwd.us/ . 
+
+An Inforgraphic and tweet addition to http://austin.fwd.us/ 
+
 
 Builts on rails currently employing :
 Angular JS
@@ -7,4 +9,5 @@ Bourbon Sass Mixin
 
 Host on heroku  https://git.heroku.com/immigreat2.git
 
+7c7e3ee55ed8c8dededf6e26b5b5c53bd94144d3
 To be integrated into FWD.US 
