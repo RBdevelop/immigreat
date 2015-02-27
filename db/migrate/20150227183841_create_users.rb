@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.string :twitter
+      t.string :twitter_handle
 
       t.timestamps null: false
     end
