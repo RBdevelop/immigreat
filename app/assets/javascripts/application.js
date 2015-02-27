@@ -21,5 +21,4 @@
 //= require angular-ui
 //= require app
 //= require app.controllers
-//= 
 
