@@ -1,8 +1,8 @@
-angular.module('app.services', [])
-.factory('name', ['', function(){
-	return function name(){
-		
-	};
+//angular.module('app.services', [])
+//.factory('name', ['', function(){
+//	return function name(){
+//		
+//	};
 // .controller('twitterButton', function(){
 // 	window.twttr = (function(d, s, id) {
 //     var t, js, fjs = d.getElementsByTagName(s)[0];
