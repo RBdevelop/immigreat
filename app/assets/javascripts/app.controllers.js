@@ -1,45 +1,50 @@
 angular.module('app.controllers', [])
-.controller('homeCtrl', function($scope, $state) {
-	$scope.goHome = function() {
-		$state.go('home');
-	};
-	console.log('THis is working');
+.controller('homeCtrl', function($scope, $state,$interval) {
     
-    intcomma = function(number) { return parseInt(number, 10).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+     $scope.intcomma = function(number) { return parseInt(number, 10).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+     $scope.now = Math.round(new Date().getTime()/1000.0)
 
+     // Calculate dates
+     $scope.prevTime = new Date('Dec 3 2014, 00:00:00');
+     $scope.thisTime = new Date();
+     $scope.diff = $scope.thisTime.getTime() - $scope.prevTime.getTime();
+     $scope.seconds = ($scope.diff/ (1000));
 
-    var now = Math.round(new Date().getTime()/1000.0)
+     // Calculate time intervals
+     $scope.numdays = Math.floor(($scope.seconds % 31554000000) / 86400); 
+     $scope.numhours = Math.floor((($scope.seconds % 31554000000) % 86400) / 3600);
+     $scope.numminutes = Math.floor(((($scope.seconds % 31554000000) % 86400) % 3600) / 60);
+     $scope.numseconds = Math.floor(((($scope.seconds % 31554000000) % 86400) % 3600));
 
-    var prevTime = new Date('Jun 28, 2013, 00:00:00');
-    var thisTime = new Date();
-    var diff = thisTime.getTime() - prevTime.getTime();
-    var seconds = (diff/ (1000));
-
-    // this is for the text part
-    var numdays = Math.floor((seconds % 31554000000) / 86400); 
-
-    var numhours = Math.floor(((seconds % 31554000000) % 86400) / 3600);
-
-    var numminutes = Math.floor((((seconds % 31554000000) % 86400) % 3600) / 60);
-
-    var numseconds = Math.floor((((seconds % 31554000000) % 86400) % 3600));
-
-    var MSrate = .42808333;
-    var increment = (MSrate*100);
-    var total = (diff*MSrate);
-    var commatotal = intcomma(total);
-
-    $scope.container = "hereeerrrreeeee";
-    setInterval(function () {
-        total+= increment;
-//        $scope.container = intcomma(total);
-//        container.innerHTML = "<h2>$" + intcomma(total) + "</h2>";
-    }, 100);
-
-})
-.controller('tweetCtrl', function($scope, $state) {
-	$scope.goTweet = function() {
-		$state.go('tweet');
+     // Calculate TX rate
+     $scope.MSrate = .002143582;
+     $scope.increment = ($scope.MSrate*100);
+     $scope.total = ($scope.diff*$scope.MSrate);
+     $scope.commatotal = $scope.intcomma($scope.total);
+    
+     // TX interval growth function
+     $interval(function () {
+         $scope.total += $scope.increment;
+         $scope.container = $scope.intcomma($scope.total);
+     }, 100);
+    
+    // Calculate National rate
+     $scope.MSrateNational = .42824074;
+     $scope.incrementNational = ($scope.MSrateNational*100);
+     $scope.totalNational = ($scope.diff*$scope.MSrateNational);
+    
+     // Calculate National growth function
+     $interval(function () {
+         $scope.totalNational += $scope.incrementNational;
+         $scope.containerNational = $scope.intcomma($scope.totalNational);
+     }, 100);
+    
+    $scope.randInt = function(min, max) {
+         return Math.floor(Math.random() * (max-min + 1) + min);
+       }
+    
+    $scope.goHome = function() {
+		$state.go('home');
 	};
 })
 .controller('successCtrl', function($scope, $state) {
