@@ -5,6 +5,6 @@ class Tweet < ActiveRecord::Base
 	:length => { 
 		minimum: 2,
 		maximum: 140,
-	  	too_long: "% Keep it brief AND let Abbot have it!" )
+	  	too_long: "% Keep it brief AND let Abbot have it!" }
 
 end
