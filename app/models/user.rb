@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   
   has_many :tweets
 
-  validates :first_name , presence: true
-  validates :last_name, presence: true
+  #validates :first_name , presence: true
+  #validates :last_name, presence: true
   validates_uniqueness_of :twitter_handle, :presence => true
 
 end
