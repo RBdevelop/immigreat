@@ -1,13 +1,12 @@
 
-An Inforgraphic and tweet addition to http://austin.fwd.us/ 
-
+An Infographic and tweet call action  
 
 Builts on rails currently employing :
 Angular JS
-devise authentication
+Devise authentication
 Bourbon Sass Mixin
 
-Host on heroku  https://git.heroku.com/immigreat2.git
+Host on heroku  https://immigreat3.herokuapp.com
 
-7c7e3ee55ed8c8dededf6e26b5b5c53bd94144d3
-To be integrated into FWD.US 
+Project status https://trello.com/b/fAnSeqBW/fwd-us-austin
+
