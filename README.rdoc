@@ -6,7 +6,7 @@ Angular JS
 Devise authentication
 Bourbon Sass Mixin
 
-Host on heroku  https://immigreat3.herokuapp.com
+Host on heroku  http://immigreat5.herokuapp.com/
 
 Project status https://trello.com/b/fAnSeqBW/fwd-us-austin
 
